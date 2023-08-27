@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container border m-5">
+      <div class="row p-4">
+        <div class="col-6">
+          <form action="submit" name="city" id="city-form">
+            <label class="citySearch"> City </label>
+            <br />
+            <input
+              type="search"
+              placeholder="Search"
+              autofocus="on"
+              id="search-input"
+            />
+            <input type="submit" value="Submit" class="button" />
+          </form>
+        </div>
+
+        <div class="col-4">
+          <div class="currentDate position-relative top-50 end-0" id="today">
+            Wednesday, July 26
+          </div>
+        </div>
+      </div>
+      <div class="row p-4">
+        <div class="col-4 todayWeather">
+          <span class="currentWeatherText">Current weather in:</span>
+          <br />
+          <span class="currentCity" id="city">Scottsdale, AZ</span>
+          <br />
+          <span class="mainTempHigh">
+            <span id="mainTempHigh">114</span>/
+          </span>
+          <span class="mainTempLow">
+            <span id="mainTempLow">90</span>
+            <span class="farenheit">°F</span>
+          </span>
+        </div>
+        <div class="col-4">
+          <span class="mainWeatherIcon"> ☀️ </span>
+        </div>
+
+        <div class="col-4 weatherDetails">
+          <span class="description" id="description">Sunny</span>
+          <br />
+          Humidity: <span id="humid">15</span>%
+          <br />
+          Wind: <span id="wind">13</span>mph
+        </div>
+        <div class="col-10">
+          <hr />
+        </div>
+        <br />
+        <br />
+        <div class="row futureDays">
+          <div class="col-2 4">
+            <div class="card text-center">
+              <div class="card-header">THURS</div>
+              <div class="card-body">
+                <p class="card-text weatherIconFuture">☀️</p>
+              </div>
+              <div class="card-footer text-body-secondary currentTempHigh">
+                110° <span class="currentTempLow">90°</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-2 4">
+            <div class="card text-center">
+              <div class="card-header">FRI</div>
+              <div class="card-body">
+                <p class="card-text weatherIconFuture">☀️</p>
+              </div>
+              <div class="card-footer text-body-secondary currentTempHigh">
+                110° <span class="currentTempLow">90°</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-2 4">
+            <div class="card text-center">
+              <div class="card-header">SAT</div>
+              <div class="card-body">
+                <p class="card-text weatherIconFuture">☀️</p>
+              </div>
+              <div class="card-footer text-body-secondary currentTempHigh">
+                110° <span class="currentTempLow">90°</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 4">
+            <div class="card text-center">
+              <div class="card-header">SUN</div>
+              <div class="card-body">
+                <p class="card-text weatherIconFuture">☀️</p>
+              </div>
+              <div class="card-footer text-body-secondary currentTempHigh">
+                110° <span class="currentTempLow">90°</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 4">
+            <div class="card text-center">
+              <div class="card-header">MON</div>
+              <div class="card-body">
+                <p class="card-text weatherIconFuture">☀️</p>
+              </div>
+              <div class="card-footer text-body-secondary currentTempHigh">
+                110° <span class="currentTempLow">90°</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"
+      ></script>
+      <script src="src/index.js"></script>
+    </div>
+  </body>
+</html>
