@@ -83,3 +83,11 @@ p {
   font-weight: normal;
   font-size: 10px;
 }
+
+.footnote {
+  color: grey;
+  font-size: 10px;
+  position: relative;
+  left: 24px;
+  bottom: 6px;
+}
