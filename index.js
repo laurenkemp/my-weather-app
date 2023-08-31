@@ -9,14 +9,12 @@ function searchLocation(event) {
   }
 
   let apiKey = "5681b3c5ae7587462a23eaa5ab9c8b23";
-  console.log(currentCity.value);
 
   let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity.value}&appid=${apiKey}&units=imperial`;
   axios.get(weatherUrl).then(showTemperature);
 }
 
 function showTemperature(response) {
-  console.log(response);
   let currentTempHigh = document.querySelector("#mainTempHigh");
   let currentTempLow = document.querySelector("#mainTempLow");
   let currentHumidity = document.querySelector("#humid");
@@ -28,8 +26,6 @@ function showTemperature(response) {
   currentHumidity.innerHTML = Math.round(response.data.main.humidity);
   currentWindSpeed.innerHTML = Math.round(response.data.wind.speed);
   currentWeatherDescription.innerHTML = response.data.weather[0].description;
-
-  console.log(response.data.weather[0].description);
 }
 
 let now = new Date();
