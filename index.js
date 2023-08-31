@@ -20,12 +20,17 @@ function showTemperature(response) {
   let currentHumidity = document.querySelector("#humid");
   let currentWindSpeed = document.querySelector("#wind");
   let currentWeatherDescription = document.querySelector("#description");
+  let mainWeatherIcon = document.querySelector("#mainWeatherIcon");
 
   currentTempHigh.innerHTML = Math.round(response.data.main.temp_max);
   currentTempLow.innerHTML = Math.round(response.data.main.temp_min);
   currentHumidity.innerHTML = Math.round(response.data.main.humidity);
   currentWindSpeed.innerHTML = Math.round(response.data.wind.speed);
   currentWeatherDescription.innerHTML = response.data.weather[0].description;
+  mainWeatherIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let now = new Date();

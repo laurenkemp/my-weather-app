@@ -90,3 +90,8 @@ p {
   position: relative;
   left: 50px;
 }
+
+.mainWeatherIcon {
+  display: block;
+  left: 0px;
+}
