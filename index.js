@@ -122,3 +122,6 @@ today.innerHTML = currentDate;
 
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", searchLocation);
+
+searchLocation("Issaquah");
+displayForecast();
