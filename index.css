@@ -62,7 +62,7 @@ p {
 }
 
 .weatherIconFuture {
-  font-size: 30px;
+  max-width: 50px;
 }
 
 .mainTempHigh {

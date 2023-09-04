@@ -42,28 +42,43 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let daysShort = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  return daysShort[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs"];
   let forecastHTML = `<div class ="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
        <div class="col-2 4">
           <div class="card text-center">
-            <div class="card-header">${day}</div>
+            <div class="card-header">${formatDay(forecastDay.dt)}</div>
             <div class="card-body">
-               <p class="card-text weatherIconFuture">☀️</p>
+               <img src="https://openweathermap.org/img/wn/${
+                 forecastDay.weather[0].icon
+               }@2x.png" class="card-text weatherIconFuture">
             </div>
             <div class="card-footer text-body-secondary currentTempHigh">
-              110° <span class="currentTempLow">90°</span>  
+              ${Math.round(
+                forecastDay.temp.max
+              )}° <span class="currentTempLow">${Math.round(
+          forecastDay.temp.min
+        )}°</span>  
               </div>
               </div>
               </div>
           
       `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
