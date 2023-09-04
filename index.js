@@ -33,6 +33,33 @@ function showTemperature(response) {
   );
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs"];
+  let forecastHTML = `<div class ="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+       <div class="col-2 4">
+          <div class="card text-center">
+            <div class="card-header">${day}</div>
+            <div class="card-body">
+               <p class="card-text weatherIconFuture">☀️</p>
+            </div>
+            <div class="card-footer text-body-secondary currentTempHigh">
+              110° <span class="currentTempLow">90°</span>  
+              </div>
+              </div>
+              </div>
+          
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let now = new Date();
 
 let days = [
@@ -70,3 +97,5 @@ today.innerHTML = currentDate;
 
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", searchLocation);
+
+displayForecast();

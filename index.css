@@ -55,9 +55,10 @@ p {
   top: 20px;
 }
 
-.futureDays {
+.weather-forecast {
   font-size: 12px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .weatherIconFuture {
